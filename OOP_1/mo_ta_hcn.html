@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="can" width="1000" height="600"></canvas>
+
+<script>
+    class Rectangle {
+        width;
+        height;
+
+        constructor(width, height) {
+            this.width = width;
+            this.height = height;
+        }
+
+        getWidth() {
+            return this.width;
+        }
+
+        getHeight() {
+            return this.height;
+        }
+
+        getArea() {
+            return this.width * this.height;
+        }
+
+        getPerimeter() {
+            return (this.width + this.height) * 2;
+        }
+
+    }
+
+    let myRectangle = new Rectangle(150, 50);
+
+    let canvas = document.getElementById("can");
+    let ctx = canvas.getContext('2d');
+    ctx.fillStyle = '#fa4b2a';
+    ctx.fillRect(10, 10, myRectangle.getWidth(), myRectangle.getHeight());
+
+    console.log(myRectangle.getArea());
+    console.log(myRectangle.getPerimeter());
+</script>
+</body>
+</html>
