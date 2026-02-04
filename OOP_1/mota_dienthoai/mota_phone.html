@@ -60,6 +60,8 @@
                 console.log(this.name + " - Inbox:");
                 console.log(this.inbox);
                 this.battery--;
+            }else {
+                console.log("No message");
             }
         }
 
@@ -77,10 +79,11 @@
     let iphone = new Mobile("iPhone");
 
     nokia.turn_on();
-    iphone.turn_on();
+    iphone.turn_off();
 
     nokia.composeMessage("Xin chào iPhone!");
     nokia.sendMessage(iphone);
+    nokia.charge()
 
     iphone.showInbox()
 
