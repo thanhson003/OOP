@@ -4,12 +4,34 @@
     <meta charset="UTF-8">
     <title>Title</title>
 
+    <style>
+        #board {
+            position: relative; /* Làm gốc tọa độ cho các ô con bên trong dùng absolute */
+            width: 900px;        /* 20 ô * 30px mỗi ô */
+            height: 900px;
+            border: 2px solid #333;
+            margin: 20px auto;   /* Căn giữa bàn cờ ra giữa màn hình */
+        }
+
+        .cell {
+            position: absolute;  /* Để đặt ô đúng vị trí top/left đã tính toán */
+            width: 30px;         /* Độ rộng mỗi ô */
+            height: 30px;        /* Độ cao mỗi ô */
+            border: 1px solid #ddd; /* Đường viền mờ giữa các ô */
+            text-align: center;  /* Căn giữa ký tự X/O theo chiều ngang */
+            line-height: 30px;   /* Căn giữa ký tự X/O theo chiều dọc */
+            font-size: 20px;
+            cursor: pointer;     /* Hiển thị hình bàn tay khi di chuột vào */
+            box-sizing: border-box; /* Đảm bảo border không làm tăng kích thước ô */
+        }
+</style>
 </head>
 <body>
-<button onclick="start()">Start</button>
-<div id="game-board">
-    <script src="caro.js"></script>
-</div>
+<div id="board"></div>
+
+
+
+<script src="caro.js"></script>
 </body>
 </html>
 
